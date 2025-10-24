@@ -7,11 +7,13 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Entity
+@Entity(name = "employee")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode
+@ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class EmployeeModel {
 
@@ -32,15 +34,9 @@ public class EmployeeModel {
 
     String address;
 
-
     int salary;
 
+    @Enumerated(EnumType.STRING)
     EmployeeRoles role;
-
-
-    EmployeeModel(EmployeeRoles role) {
-        this.role = role;
-    }
-
 
 }

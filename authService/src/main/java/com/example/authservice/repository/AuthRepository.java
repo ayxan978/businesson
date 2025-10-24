@@ -1,4 +1,9 @@
 package com.example.authservice.repository;
 
-public interface AuthRepository {
+import com.example.authservice.model.BossModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AuthRepository extends JpaRepository<BossModel, Long> {
 }

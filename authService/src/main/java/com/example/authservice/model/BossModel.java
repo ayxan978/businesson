@@ -1,39 +1,33 @@
 package com.example.authservice.model;
 
 
-import com.example.authservice.authEnum.BossRoles;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
-@Entity
+@Entity(name = "boss")
 @Data
-@Setter
-@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@EqualsAndHashCode
+@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class BossModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String surname;
-    private String password;
-    private String email;
-    private String phone;
-    private String address;
+    Long id;
+    String name;
+    String surname;
+    String password;
+    String email;
+    String phone;
+    String address;
 
-    private BossRoles role;
+    short status;
 
-
-    BossModel(BossRoles role) {
-        this.role = role;
-    }
-
-    public BossModel() {
-
-    }
 }
