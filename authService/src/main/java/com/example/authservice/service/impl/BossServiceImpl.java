@@ -48,4 +48,16 @@ public class BossServiceImpl implements BossService {
 
         return modelMapper.map(bossModel, BossDtoResponse.class);
     }
+
+    @Override
+    public BossDtoResponse loginBoss(String email, String password) {
+        Optional<BossModel> optional = bossRepository.loginBoss(email, password);
+        if (optional.isEmpty()) {
+            return null;
+        }
+        BossModel bossModel = optional.get();
+
+
+        return modelMapper.map(bossModel, BossDtoResponse.class);
+    }
 }

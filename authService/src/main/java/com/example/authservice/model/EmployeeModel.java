@@ -39,7 +39,4 @@ public class EmployeeModel {
     @Enumerated(EnumType.STRING)
     EmployeeRoles role;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "company_id", referencedColumnName = "id")
-    CompanyModel company;
 }
