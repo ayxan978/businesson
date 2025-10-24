@@ -11,7 +11,6 @@ import lombok.experimental.FieldDefaults;
 @EqualsAndHashCode
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
-
 public class BossDtoResponse {
     String name;
     String surname;
