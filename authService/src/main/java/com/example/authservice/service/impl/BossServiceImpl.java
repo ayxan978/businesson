@@ -37,4 +37,15 @@ public class BossServiceImpl implements BossService {
 
         return modelMapper.map(DB, BossDtoResponse.class);
     }
+
+    @Override
+    public BossDtoResponse findById(Long id) {
+        Optional<BossModel> optional = bossRepository.findById(id);
+        if (optional.isEmpty()) {
+            return null;
+        }
+        BossModel bossModel = optional.get();
+
+        return modelMapper.map(bossModel, BossDtoResponse.class);
+    }
 }

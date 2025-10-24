@@ -16,4 +16,15 @@ public class BossController {
     public BossDtoResponse saveBoss(@RequestBody BossDtoRequest request){
         return bossService.saveBoss(request);
     }
+
+    @PutMapping("/boss/{id}")
+    public BossDtoResponse updateBoss(@PathVariable Long id,
+                                      @RequestBody BossDtoRequest request){
+        return bossService.updateBoss(request, id);
+    }
+
+    @GetMapping("/boss/{id}")
+    public BossDtoResponse findById(@PathVariable Long id){
+        return bossService.findById(id);
+    }
 }
