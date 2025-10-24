@@ -1,49 +1,46 @@
 package com.example.authservice.model;
 
 
-import com.example.authservice.authEnum.BossRoles;
+import com.example.authservice.authEnum.EmployeeRoles;
 import com.example.authservice.function.PasswordGenerate;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.security.SecureRandom;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Data
-@Setter
-@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class EmployeeModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private String name;
+    String name;
 
-    private String surname;
+    String surname;
 
-    private String password = PasswordGenerate.generateRandomPassword(8);
+    String password = PasswordGenerate.generateRandomPassword(8);
 
-    private String email;
+    @Column(unique = true)
+    String email;
 
-    private String phone;
+    String phone;
 
-    private String address;
-
-    private BossRoles role;
+    String address;
 
 
-    EmployeeModel(BossRoles role) {
+    int salary;
+
+    EmployeeRoles role;
+
+
+    EmployeeModel(EmployeeRoles role) {
         this.role = role;
     }
 
-    public EmployeeModel() {
-
-    }
 
 }
