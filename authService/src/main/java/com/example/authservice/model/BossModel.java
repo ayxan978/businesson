@@ -1,7 +1,6 @@
 package com.example.authservice.model;
 
 
-import com.example.authservice.authEnum.BossRoles;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,12 +25,9 @@ public class BossModel {
     private String phone;
     private String address;
 
-    private BossRoles role;
+    private short status;
 
 
-    BossModel(BossRoles role) {
-        this.role = role;
-    }
 
     public BossModel() {
 

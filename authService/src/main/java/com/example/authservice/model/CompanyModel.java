@@ -1,7 +1,6 @@
 package com.example.authservice.model;
 
 
-import com.example.authservice.authEnum.BossRoles;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
