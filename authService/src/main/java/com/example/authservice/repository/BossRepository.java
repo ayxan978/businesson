@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AuthRepository extends JpaRepository<BossModel, Long> {
+public interface BossRepository extends JpaRepository<BossModel, Long> {
 }

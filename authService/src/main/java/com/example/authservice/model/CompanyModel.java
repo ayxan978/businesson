@@ -1,10 +1,7 @@
 package com.example.authservice.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -21,12 +18,12 @@ public class CompanyModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
     String name;
-    String surname;
-    String password;
-    String email;
-    String phone;
-    String address;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "boss_id", referencedColumnName = "id")
+    BossModel boss;
 
 
 

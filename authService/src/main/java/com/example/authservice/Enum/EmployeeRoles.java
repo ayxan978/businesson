@@ -1,4 +1,4 @@
-package com.example.authservice.authEnum;
+package com.example.authservice.Enum;
 
 
 public enum EmployeeRoles {

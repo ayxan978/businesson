@@ -1,11 +1,9 @@
-package com.example.authservice.model;
+package com.example.authservice.dto;
 
 
-import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Entity(name = "boss")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,19 +11,11 @@ import lombok.experimental.FieldDefaults;
 @EqualsAndHashCode
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class BossModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+public class BossDtoRequest {
     String name;
     String surname;
     String password;
     String email;
     String phone;
     String address;
-
-
-    short status;
-
 }

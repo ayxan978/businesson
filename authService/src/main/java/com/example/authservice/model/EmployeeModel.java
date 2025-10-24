@@ -1,7 +1,7 @@
 package com.example.authservice.model;
 
 
-import com.example.authservice.authEnum.EmployeeRoles;
+import com.example.authservice.Enum.EmployeeRoles;
 import com.example.authservice.function.PasswordGenerate;
 import jakarta.persistence.*;
 import lombok.*;
@@ -39,4 +39,7 @@ public class EmployeeModel {
     @Enumerated(EnumType.STRING)
     EmployeeRoles role;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    CompanyModel company;
 }
